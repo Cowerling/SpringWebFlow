@@ -1,0 +1,17 @@
+package pizza.config;
+
+import org.springframework.context.annotation.ComponentScan;
+import org.springframework.context.annotation.ComponentScan.Filter;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.FilterType;
+import org.springframework.context.annotation.ImportResource;
+import org.springframework.web.servlet.config.annotation.EnableWebMvc;
+
+/**
+ * Created by dell on 2017-2-16.
+ */
+@Configuration
+@ComponentScan(basePackages = { "pizza" }, excludeFilters = { @Filter(type = FilterType.ANNOTATION, value = EnableWebMvc.class)})
+@ImportResource("/WEB-INF/spring/flow.xml")
+public class RootConfig {
+}
